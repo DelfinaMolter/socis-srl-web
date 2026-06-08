@@ -236,7 +236,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <div className="mt-40 mb-40">
+      <div className="mt-40 mb-40" id="contacto">
         <Contact />
       </div>
       <Footer nav={false} />

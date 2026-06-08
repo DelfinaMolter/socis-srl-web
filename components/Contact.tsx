@@ -13,7 +13,6 @@ const Contact: React.FC = () => {
   const recaptchaRef = useRef<ReCAPTCHA | null>(null);
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
-  console.log("reCAPTCHA siteKey:", siteKey);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

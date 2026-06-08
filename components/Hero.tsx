@@ -197,7 +197,7 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
                           Nuestro Diferencial{" "}
                         </h4>
                         <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-                          Implementamios nirmas como una herramienta de orden y
+                          Implementamos normas como una herramienta de orden y
                           mejora organizacional que fortalece la estructura de
                           la empresa y la prepara para crecer de forma
                           sostenida.
