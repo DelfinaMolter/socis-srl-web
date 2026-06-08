@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "SOCIS Consultores",
   description: "Consultores de normas ISO para servicios e industrias.",
   icons: {
-    icon: "/public/socis-favicon.ico",
+    icon: "/socis-logo.png",
   },
 };
 
