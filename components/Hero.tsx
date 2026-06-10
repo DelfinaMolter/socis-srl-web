@@ -24,7 +24,20 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
   }, []);
 
   const toggleSection = (section: "iso" | "knowledge") => {
-    setExpandedSection((prev) => (prev === section ? "none" : section));
+    setExpandedSection((prev) => {
+      const nextSection = prev === section ? "none" : section;
+
+      if (nextSection === "knowledge" && prev !== "knowledge") {
+        window.setTimeout(() => {
+          document.getElementById("lec")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 500);
+      }
+
+      return nextSection;
+    });
   };
 
   return (
@@ -63,12 +76,12 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
         </div>
 
         <div
-          className={`grid grid-cols-1 max-w-6xl mx-auto transition-all duration-500 delay-300 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`grid grid-cols-1 max-w-6xl mx-auto transition-all duration-300 delay-300 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           {/* ISO Card & Accordion */}
           <div className="mt-[64px] scroll-mt-32" id="isoStandards">
             <div
-              className={` glass rounded-3xl border border-white bg-white shadow-xl transition-all duration-500 overflow-hidden ${expandedSection === "iso" ? "ring-2 ring-blue-600/20" : ""}`}
+              className={` glass rounded-3xl border border-white bg-white shadow-xl transition-all duration-300 overflow-hidden ${expandedSection === "iso" ? "ring-2 ring-blue-600/20" : ""}`}
             >
               <div className="p-8 md:p-10">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -101,7 +114,7 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
 
                 {/* ISO Accordion Content */}
                 <div
-                  className={` transition-all duration-500 ease-in-out ${expandedSection === "iso" ? "max-h-[2000px] opacity-100 mt-12" : "max-h-0 opacity-0 overflow-hidden"}`}
+                  className={` transition-all duration-300 ease-in-out ${expandedSection === "iso" ? "max-h-[2000px] opacity-100 mt-12" : "max-h-0 opacity-0 overflow-hidden"}`}
                 >
                   {/* Elegant Introduction Section */}
                   <div className="relative pl-6 border-l-4 border-blue-600 max-w-4xl">
@@ -226,7 +239,7 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
           {/* Knowledge Economy Card & Accordion */}
           <div className="mt-[64px] scroll-mt-32" id="lec">
             <div
-              className={` glass rounded-3xl border border-white bg-white shadow-xl transition-all duration-500 overflow-hidden ${expandedSection === "knowledge" ? "ring-2 ring-emerald-600/20" : ""}`}
+              className={` glass rounded-3xl border border-white bg-white shadow-xl transition-all duration-300 overflow-hidden ${expandedSection === "knowledge" ? "ring-2 ring-emerald-600/20" : ""}`}
             >
               <div className="p-8 md:p-10">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -261,7 +274,7 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
 
                 {/* Knowledge Economy Accordion Content */}
                 <div
-                  className={`transition-all duration-700 ease-in-out ${expandedSection === "knowledge" ? "max-h-[2000px] opacity-100 mt-12" : "max-h-0 opacity-0 overflow-hidden"}`}
+                  className={`transition-all duration-300 ease-in-out ${expandedSection === "knowledge" ? "max-h-[2000px] opacity-100 mt-12" : "max-h-0 opacity-0 overflow-hidden"}`}
                 >
                   <div className="pt-8 border-t border-slate-100">
                     <div className="max-w-4xl mx-auto space-y-12">

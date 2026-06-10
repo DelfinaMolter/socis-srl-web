@@ -5,45 +5,45 @@ import { FaWhatsapp } from "react-icons/fa";
 
 import {
   Award,
-  BriefcaseBusiness,
-  Building2,
   CheckCircle2,
   ClipboardCheck,
-  Code2,
+  Droplets,
   Factory,
   FileText,
-  HeartPulse,
+  FlaskConical,
+  Leaf,
   MessageCircle,
+  Mountain,
+  PlugZap,
+  Recycle,
   Search,
   ShieldCheck,
-  ShoppingCart,
-  Smile,
-  Truck,
+  TrendingUp,
   Users,
 } from "lucide-react";
 
 const whatsappUrl =
-  "https://wa.me/5491144478802?text=Hola%20SOCIS%2C%20quiero%20consultar%20por%20ISO%209001";
+  "https://wa.me/5491144478802?text=Hola%20SOCIS%2C%20quiero%20consultar%20por%20ISO%2014001";
 
 const steps = [
   [
     "Diagnóstico inicial",
-    "Analizamos su situación actual y definimos el alcance del proyecto.",
+    "Analizamos su situación ambiental actual y definimos el alcance del sistema.",
     Search,
   ],
   [
     "Diseño del sistema",
-    "Definimos procesos, indicadores, riesgos y la documentación necesaria.",
-    Building2,
+    "Definimos procesos, aspectos e impactos ambientales y la documentación necesaria.",
+    Factory,
   ],
   [
     "Implementación y capacitación",
-    "Capacitamos a su equipo y acompañamos la puesta en marcha.",
+    "Capacitamos a su equipo y acompañamos la puesta en marcha del sistema.",
     Users,
   ],
   [
     "Auditoría interna",
-    "Verificamos el cumplimiento de la norma y detectamos oportunidades de mejora.",
+    "Verificamos el cumplimiento del sistema y detectamos oportunidades de mejora.",
     ClipboardCheck,
   ],
   [
@@ -55,72 +55,72 @@ const steps = [
 
 const benefits = [
   [
-    "Mejora la eficiencia y la organización",
-    "Optimice procesos y reduzca errores.",
-    Award,
+    "Reduce el impacto ambiental",
+    "Disminuye la contaminación y optimiza el uso de recursos naturales.",
+    TrendingUp,
   ],
   [
-    "Aumenta la satisfacción de sus clientes",
-    "Brinde un servicio de mayor calidad y genere confianza.",
-    Smile,
-  ],
-  [
-    "Reduce costos y retrabajos",
-    "Menos fallas, menos desperdicio, más resultados.",
+    "Ahorra costos y mejora la eficiencia",
+    "Menos consumo de recursos, menor generación de residuos y reducción de costos.",
     CheckCircle2,
   ],
   [
-    "Facilita licitaciones y requisitos de clientes",
-    "Cumpla estándares y acceda a más oportunidades.",
+    "Cumple con la legislación ambiental",
+    "Asegura el cumplimiento de requisitos legales y evita sanciones.",
     ShieldCheck,
+  ],
+  [
+    "Mejora la imagen y ventaja competitiva",
+    "Demuestra su compromiso ambiental ante clientes, proveedores y la sociedad.",
+    Leaf,
   ],
 ];
 
 const sectors = [
-  ["Software y SaaS", Code2],
-  ["Consultoría", Users],
-  ["Ingeniería", BriefcaseBusiness],
-  ["Manufactura e industrias", Factory],
-  ["Logística y transporte", Truck],
-  ["Servicios profesionales", Users],
-  ["Comercio y distribución", ShoppingCart],
-  ["Salud y educación", HeartPulse],
+  ["Industria química y petroquímica", Factory],
+  ["Metalmecánica y siderúrgica", FlaskConical],
+  ["Minería y extracción", Mountain],
+  ["Energía y utilities", PlugZap],
+  ["Papel y celulosa", Recycle],
+  ["Alimenticia y bebidas", Factory],
+  ["Tratamiento de aguas y residuos", Droplets],
 ];
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-white text-socisBlueDark">
       <section className="relative w-full overflow-hidden">
-        <div className="relative md:absolute max-w-40  md:right-6 lg:right-12 md:top-8 rounded-xl bg-[socisLogoBlue] px-5 py-3 text-xl font-bold text-white opacity-70 mx-6 my-8 md:mx-0 md:my-0">
-          ISO 9001
+        <div className="relative md:absolute max-w-40  md:right-6 lg:right-12 md:top-8 rounded-xl bg-socisGreen px-5 py-3 text-xl font-bold text-white opacity-70 mx-6 my-8 md:mx-0 md:my-0">
+          ISO 14001
         </div>
         <div id="header" className="  px-6 py-8  lg:px-8 lg:py-12 ">
           <div className="mb-8 inline-flex flex-col">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[socisLogoBlue] rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-10 h-10 bg-[#448AFF] rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
                 <img src="/socis-logo.png" alt="Socis" className="w-9 h-9" />
               </div>
-              <div className="text-5xl font-serif tracking-wide text-[socisLogoBlue]">
+              <div className="text-5xl font-serif tracking-wide text-[#448AFF]">
                 SOCIS
               </div>
             </div>
-            <div className="mt-1 bg-[socisLogoBlue] px-4 py-1 text-center text-sm font-semibold tracking-[0.45em] text-white">
+            <div className="mt-1 bg-[#448AFF] px-4 py-1 text-center text-sm font-semibold tracking-[0.45em] text-white">
               CONSULTORES
             </div>
           </div>
 
           <div className="mt-10 px-8">
             <h1 className=" text-4xl xs:text-5xl font-extrabold leading-tight tracking-tight text-socisBlueDark md:text-6xl">
-              Certificación ISO 9001
-              <span className="block text-socisBlueMedium ">
-                para servicios e industrias
+              Certificación ISO 14001
+              <span className="block text-socisGreen ">
+                Gestión ambiental que impulsa el futuro de su empresa
               </span>
             </h1>
 
             <p className="mt-6  text-xl leading-relaxed">
-              Ayudamos a implementar sistemas de gestión de calidad que mejoran
-              procesos, aumentan la satisfacción de los clientes y generan una
-              ventaja competitiva sostenible.
+              Ayudamos a su organización a implementar un sistema de gestión
+              ambiental eficaz que reduce el impacto ambiental, asegura el
+              cumplimiento legal y mejora su desempeño ambiental de manera
+              sostenible.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -135,7 +135,7 @@ export default function Home() {
               </a>
               <a
                 href="#contacto"
-                className="inline-flex items-center justify-center gap-3 rounded-xl border-2 border-socisBlueMedium bg-white px-7 py-4 text-lg font-bold text-socisBlueMedium transition hover:bg-blue-50"
+                className="inline-flex items-center justify-center gap-3 rounded-xl border-2 border-socisGreen bg-white px-7 py-4 text-lg font-bold text-socisGreen transition hover:bg-blue-50"
               >
                 <FileText className="h-6 w-6" /> Solicitar propuesta
               </a>
@@ -146,29 +146,29 @@ export default function Home() {
             </p>
           </div>
 
-          <div className=" m-auto my-8 rounded-2xl bg-socisBlueMedium p-6 text-white shadow-soft md:w-[70%]">
-            <div className="grid gap-4 md:grid-cols-2">
-              <div>
-                <div className="mb-2 flex items-center gap-3">
-                  <Users className="h-8 w-8" />
-                  <h3 className="text-lg font-bold">
-                    Para empresas de servicios
-                  </h3>
-                </div>
-                <p className="text-sm leading-relaxed text-blue-50">
-                  Consultoras, estudios, agencias, empresas de tecnología,
-                  salud, educación, logística, turismo y más.
-                </p>
+          <div className=" m-auto my-8 rounded-2xl bg-socisGreen p-6 text-white shadow-soft md:w-[70%]">
+            <div className="flex gap-5">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-isoGreen">
+                <Leaf className="h-8 w-8 text-socisGreenLogo" />
               </div>
-              <div className="border-t border-white/30 pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-                <div className="mb-2 flex items-center gap-3">
-                  <Factory className="h-8 w-8" />
-                  <h3 className="text-lg font-bold">Para industrias</h3>
-                </div>
-                <p className="text-sm leading-relaxed text-blue-50">
-                  Alimenticias, metalúrgicas, automotrices, químicas, plásticas,
-                  textiles y más.
-                </p>
+
+              <div className="">
+                <h3 className="text-lg font-bold">
+                  La ISO 14001 es la norma internacional que ayuda a su
+                  organización a:
+                </h3>
+                <ul className="mt-4 space-y-3 text-sm text-green-50">
+                  {[
+                    "Proteger el medio ambiente",
+                    "Cumplir con la legislación aplicable",
+                    "Mejorar su desempeño ambiental y reputación",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-300" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -181,14 +181,14 @@ export default function Home() {
             const StepIcon = Icon as typeof Search;
             return (
               <div key={title as string} className="text-center">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-50 text-socisBlueMedium">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-socisGreenLight text-socisGreen">
                   <StepIcon className="h-10 w-10" />
                 </div>
-                <div className="-mt-24 ml-auto mr-auto flex h-8 w-8 items-center justify-center rounded-full bg-socisBlueMedium text-sm font-bold text-white">
+                <div className="-mt-24 ml-auto mr-auto flex h-8 w-8 items-center justify-center rounded-full bg-socisGreen text-sm font-bold text-white">
                   {index + 1}
                 </div>
                 <div className="mt-20">
-                  <h3 className="text-lg font-extrabold text-socisBlueMedium">
+                  <h3 className="text-lg font-extrabold text-socisGreen">
                     {title as string}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed">
@@ -207,8 +207,8 @@ export default function Home() {
             const BenefitIcon = Icon as typeof Award;
             return (
               <div key={title as string} className="text-center">
-                <BenefitIcon className="mx-auto h-12 w-12 text-socisBlueMedium" />
-                <h3 className="mt-4 text-lg font-extrabold text-socisBlueMedium">
+                <BenefitIcon className="mx-auto h-12 w-12 text-socisGreen" />
+                <h3 className="mt-4 text-lg font-extrabold text-socisGreen">
                   {title as string}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed">{text as string}</p>
@@ -219,13 +219,13 @@ export default function Home() {
       </Section>
 
       <Section title="Implementación pensada para todo tipo de organizaciones">
-        <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-8 container">
+        <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-7 container">
           {sectors.map(([sector, Icon]) => {
-            const SectorIcon = Icon as typeof Code2;
+            const SectorIcon = Icon as typeof Factory;
             return (
               <div key={sector as string} className="text-center">
-                <SectorIcon className="mx-auto h-11 w-11 text-socisBlueMedium" />
-                <p className="mt-3 text-sm font-extrabold text-socisBlueMedium">
+                <SectorIcon className="mx-auto h-11 w-11 text-socisGreen" />
+                <p className="mt-3 text-sm font-extrabold text-socisGreen">
                   {sector as string}
                 </p>
               </div>

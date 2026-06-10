@@ -8,9 +8,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        socisBlue: "#003A8C",
-        socisDark: "#061A45",
-        socisGreen: "#18A842",
+        socisLogoBlue: "#448AFF",
+        socisBlueLight: "#2663EB",
+        socisBlueMedium: "#003A8C",
+        socisBlueDark: "#061A45",
+        socisGreenWhatsApp: "#18A842",
+        socisGreenWhatsAppDark: "#15963c",
+        socisGreen: "#144E16",
+        socisGreenLogo: "#116610",
+        socisGreenIcon: "#61C518",
+        socisGreenLight: "#EFFAEB",
+        socisGreenDark: "#0C4C11",
       },
       boxShadow: {
         soft: "0 14px 40px rgba(2, 20, 68, 0.12)",
