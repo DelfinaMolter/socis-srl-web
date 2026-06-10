@@ -19,6 +19,9 @@ const config: Config = {
         socisGreenIcon: "#61C518",
         socisGreenLight: "#EFFAEB",
         socisGreenDark: "#0C4C11",
+        isoGold: "#CC8E0F",
+        isoGoldDark: "#A06102",
+        isoGoldLight: "#FDF6EA",
       },
       boxShadow: {
         soft: "0 14px 40px rgba(2, 20, 68, 0.12)",

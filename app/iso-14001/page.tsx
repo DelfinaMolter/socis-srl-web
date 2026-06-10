@@ -12,7 +12,6 @@ import {
   FileText,
   FlaskConical,
   Leaf,
-  MessageCircle,
   Mountain,
   PlugZap,
   Recycle,
@@ -96,14 +95,14 @@ export default function Home() {
         <div id="header" className="  px-6 py-8  lg:px-8 lg:py-12 ">
           <div className="mb-8 inline-flex flex-col">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#448AFF] rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-10 h-10 bg-socisLogoBlue rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
                 <img src="/socis-logo.png" alt="Socis" className="w-9 h-9" />
               </div>
-              <div className="text-5xl font-serif tracking-wide text-[#448AFF]">
+              <div className="text-5xl font-serif tracking-wide text-socisBlueMedium">
                 SOCIS
               </div>
             </div>
-            <div className="mt-1 bg-[#448AFF] px-4 py-1 text-center text-sm font-semibold tracking-[0.45em] text-white">
+            <div className="mt-1 bg-socisBlueMedium px-4 py-1 text-center text-sm font-semibold tracking-[0.45em] text-white">
               CONSULTORES
             </div>
           </div>
@@ -141,8 +140,8 @@ export default function Home() {
               </a>
             </div>
             <p className="mt-5 flex items-center gap-2 text-sm font-medium">
-              <ShieldCheck className="h-5 w-5 text-socisBlueMedium" /> Sin cargo
-              y sin compromiso
+              <ShieldCheck className="h-5 w-5 text-socisGreen" /> Sin cargo y
+              sin compromiso
             </p>
           </div>
 

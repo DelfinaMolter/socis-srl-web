@@ -56,9 +56,14 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
         <div
           className={`text-center max-w-4xl mx-auto mb-16 transition-all duration-500 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
-          <h1 className="text-5xl md:text-8xl font-black text-slate-900 leading-[1] mb-6 tracking-tight">
-            SOCIS <span className="text-blue-600 italic">Consultores</span>
-          </h1>
+          <div className="flex flex-wrap  mb-6 ">
+            <h1 className="mr-4 md:mr-10 text-5xl md:text-8xl font-serif text-socisBlueMedium leading-[1] tracking-tight">
+              SOCIS{" "}
+            </h1>
+            <h2 className="text-5xl md:text-8xl text-blue-600 font-semibold tracking-[0.05em]">
+              Consultores
+            </h2>
+          </div>
           <p className="text-2xl md:text-3xl font-medium text-slate-600 mb-10">
             Implementamos normas ISO y gestionamos la Ley de Economía del
             Conocimiento para empresas de tecnología.
