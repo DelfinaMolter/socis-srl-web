@@ -5,7 +5,6 @@ import { FaWhatsapp } from "react-icons/fa";
 
 import {
   Award,
-  BriefcaseBusiness,
   CheckCircle2,
   ClipboardCheck,
   Construction,
