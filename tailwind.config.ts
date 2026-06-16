@@ -22,6 +22,7 @@ const config: Config = {
         isoGold: "#CC8E0F",
         isoGoldDark: "#A06102",
         isoGoldLight: "#FDF6EA",
+        isoViolet: "#4F47E5",
       },
       boxShadow: {
         soft: "0 14px 40px rgba(2, 20, 68, 0.12)",
