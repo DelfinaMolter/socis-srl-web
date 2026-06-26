@@ -3,7 +3,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { Mail, Phone, Send, CheckCircle2 } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  siteUrl: string;
+}
+const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success">(
     "idle",
   );
@@ -12,7 +15,7 @@ const Contact: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA | null>(null);
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-
+  console.log("Site URL:", siteUrl);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -25,20 +28,48 @@ const Contact: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!siteKey) {
-      return;
-    }
-    if (!recaptchaToken) {
+
+    if (!siteKey || !recaptchaToken) {
       return;
     }
 
     setFormStatus("sending");
-    // Simulando envío de API
-    setTimeout(() => {
+
+    const form = e.currentTarget;
+
+    const formData = {
+      fullName: (form.elements.namedItem("fullName") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      subject: (form.elements.namedItem("subject") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
+      recaptchaToken,
+      siteUrl,
+    };
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
       setFormStatus("success");
-    }, 1500);
+      form.reset();
+      recaptchaRef.current?.reset();
+      setRecaptchaToken(null);
+    } else {
+      const data = await response.json().catch(() => null);
+      setFormStatus("idle");
+      alert(data?.error || "Hubo un error al enviar el formulario.");
+    }
   };
 
   return (
@@ -66,7 +97,7 @@ const Contact: React.FC = () => {
 
           <div className="space-y-8 px-6">
             <a
-              href="mailto:socis@socis.com.ar"
+              href="mailto:info@socis.com.ar"
               className="flex items-start gap-6 group"
             >
               <div className="p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-600 transition-colors">
@@ -74,7 +105,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="text-lg font-bold text-slate-900">Email</h4>
-                <p className="text-slate-600 font-medium">socis@socis.com.ar</p>
+                <p className="text-slate-600 font-medium">info@socis.com.ar</p>
               </div>
             </a>
             <a
@@ -123,6 +154,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     type="text"
+                    name="fullName"
                     required
                     className="w-full px-5 py-4 rounded-xl border-2 border-slate-100 bg-white text-slate-900 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all placeholder:text-slate-300 shadow-sm"
                     placeholder="Ej: Juan Pérez"
@@ -135,6 +167,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="w-full px-5 py-4 rounded-xl border-2 border-slate-100 bg-white text-slate-900 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all placeholder:text-slate-300 shadow-sm"
                     placeholder="nombre@empresa.com"
@@ -149,6 +182,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     type="text"
+                    name="company"
                     required
                     className="w-full px-5 py-4 rounded-xl border-2 border-slate-100 bg-white text-slate-900 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all placeholder:text-slate-300 shadow-sm"
                     placeholder="Ej: Socis SRL"
@@ -160,6 +194,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input
                     type="url"
+                    name="website"
                     className="w-full px-5 py-4 rounded-xl border-2 border-slate-100 bg-white text-slate-900 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all placeholder:text-slate-300 shadow-sm"
                     placeholder="https://www.ejemplo.com"
                   />
@@ -172,6 +207,7 @@ const Contact: React.FC = () => {
                 </label>
                 <input
                   type="text"
+                  name="phone"
                   required
                   className="w-full px-5 py-4 rounded-xl border-2 border-slate-100 bg-white text-slate-900 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all placeholder:text-slate-300 shadow-sm"
                   placeholder="Ej: 1144445555"
@@ -183,7 +219,10 @@ const Contact: React.FC = () => {
                   Asunto de interés
                 </label>
                 <div className="relative">
-                  <select className="w-full px-5 py-4 rounded-xl border-2 border-slate-100 bg-white text-slate-900 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all appearance-none shadow-sm cursor-pointer">
+                  <select
+                    name="subject"
+                    className="w-full px-5 py-4 rounded-xl border-2 border-slate-100 bg-white text-slate-900 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all appearance-none shadow-sm cursor-pointer"
+                  >
                     <option>Certificación Normas ISO</option>
                     <option>Certificación ISO 27001</option>
                     <option>Ley de Economía del Conocimiento</option>
@@ -212,6 +251,7 @@ const Contact: React.FC = () => {
                 </label>
                 <textarea
                   rows={4}
+                  name="message"
                   className="w-full px-5 py-4 rounded-xl border-2 border-slate-100 bg-white text-slate-900 focus:ring-4 focus:ring-blue-500/10 focus:border-blue-600 outline-none transition-all placeholder:text-slate-300 shadow-sm resize-none"
                   placeholder="Detállenos brevemente su necesidad..."
                 ></textarea>

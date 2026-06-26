@@ -248,7 +248,7 @@ export default function Home() {
       </section>
 
       <div className="mt-40 mb-40" id="contacto">
-        <Contact />
+        <Contact siteUrl="iso27001" />
       </div>
       <Footer nav={false} />
       <WhatsAppFloat />

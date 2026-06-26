@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProp> = ({ nav }) => {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-slate-300">
                 <Mail className="w-5 h-5 text-blue-500" />
-                <span>socis@socis.com.ar</span>
+                <span>info@socis.com.ar</span>
               </div>
               <div className="flex items-center gap-3 text-slate-300">
                 <Phone className="w-5 h-5 text-blue-500" />
