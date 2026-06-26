@@ -9,7 +9,7 @@ type ContactForm = {
   subject: string;
   message?: string;
   recaptchaToken: string;
-  siteURL: string;
+  siteUrl: string;
 };
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -99,11 +99,10 @@ export async function POST(req: Request) {
     const adminEmailResult = await resend.emails.send({
       from: "Web <info@socis.com.ar>",
       to: `info@socis.com.ar`,
-      subject: `Nueva consulta: ${body.subject}`,
+      subject: `Nueva consulta: [${body.siteUrl?.toUpperCase() ?? "WEB"}] ${body.subject}`,
       html: `
     <h2>Nueva consulta desde la web</h2>
 
-    <p><strong>Envio desde:</strong> ${body.siteURL}</p>
     <p><strong>Nombre:</strong> ${body.fullName}</p>
     <p><strong>Email:</strong> ${body.email}</p>
     <p><strong>Empresa:</strong> ${body.company}</p>
@@ -114,7 +113,6 @@ export async function POST(req: Request) {
     <p>${body.message || "Sin mensaje"}</p>
   `,
     });
-
     if (adminEmailResult.error) {
       console.error("Error enviando email al admin:", adminEmailResult.error);
       return Response.json(
