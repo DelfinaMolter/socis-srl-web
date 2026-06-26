@@ -97,8 +97,7 @@ export async function POST(req: Request) {
 
     // Enviar email al admin
     const adminEmailResult = await resend.emails.send({
-      from: "Formulario <onboarding@resend.dev>",
-      //from: "Web <info+contacto@socis.com.ar>",
+      from: "Web <info+contacto@socis.com.ar>",
       to: `info${body.siteURL}@socis.com.ar`,
       subject: `Nueva consulta: ${body.subject}`,
       html: `
@@ -128,8 +127,7 @@ export async function POST(req: Request) {
 
     // Enviar confirmación al usuario
     const userEmailResult = await resend.emails.send({
-      from: "Formulario <onboarding@resend.dev>",
-      //from: "Socis <info+contacto@socis.com.ar>",
+      from: "Socis <info+contacto@socis.com.ar>",
       to: body.email,
       subject: "Recibimos tu consulta",
       html: `
