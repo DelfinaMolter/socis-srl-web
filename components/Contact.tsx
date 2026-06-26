@@ -15,7 +15,6 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA | null>(null);
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-  console.log("Site URL:", siteUrl);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -49,7 +48,7 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
       message: (form.elements.namedItem("message") as HTMLTextAreaElement)
         .value,
       recaptchaToken,
-      siteUrl,
+      siteUrl: siteUrl, // Include the site URL in the form data
     };
 
     const response = await fetch("/api/contact", {

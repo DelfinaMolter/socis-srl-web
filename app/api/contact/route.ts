@@ -97,12 +97,13 @@ export async function POST(req: Request) {
 
     // Enviar email al admin
     const adminEmailResult = await resend.emails.send({
-      from: "Web <info+contacto@socis.com.ar>",
-      to: `info${body.siteURL}@socis.com.ar`,
+      from: "Web <info@socis.com.ar>",
+      to: `info@socis.com.ar`,
       subject: `Nueva consulta: ${body.subject}`,
       html: `
     <h2>Nueva consulta desde la web</h2>
 
+    <p><strong>Envio desde:</strong> ${body.siteURL}</p>
     <p><strong>Nombre:</strong> ${body.fullName}</p>
     <p><strong>Email:</strong> ${body.email}</p>
     <p><strong>Empresa:</strong> ${body.company}</p>
@@ -127,7 +128,7 @@ export async function POST(req: Request) {
 
     // Enviar confirmación al usuario
     const userEmailResult = await resend.emails.send({
-      from: "Socis <info+contacto@socis.com.ar>",
+      from: "Socis <info@socis.com.ar>",
       to: body.email,
       subject: "Recibimos tu consulta",
       html: `
