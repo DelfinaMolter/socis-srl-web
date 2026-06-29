@@ -71,7 +71,7 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#contact"
+              href="#contactos"
               className="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-all shadow-xl shadow-blue-500/25 flex items-center justify-center gap-2 hover:scale-105 active:scale-95 text-lg"
             >
               Solicitar diagnóstico inicial

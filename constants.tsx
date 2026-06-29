@@ -5,7 +5,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Normas ISO", href: "#normasiso" },
   { label: "Ley de Conocimiento", href: "#lec" },
   { label: "Nosotros", href: "#about" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Contacto", href: "#contactos" },
 ];
 
 export const ISO_STANDARDS = [

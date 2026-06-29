@@ -57,7 +57,7 @@ const Services: React.FC = () => {
                 {service.description}
               </p>
               <a
-                href="#contact"
+                href="#contactos"
                 className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-3 transition-all"
               >
                 Consultar <LucideIcons.ArrowRight className="w-4 h-4" />

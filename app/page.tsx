@@ -84,7 +84,7 @@ export default function Home() {
         </section>
 
         <section
-          id="contact"
+          id="contactos"
           className="py-24 md:py-36 bg-white overflow-hidden"
         >
           <Contact siteUrl="home" />
