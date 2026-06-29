@@ -84,7 +84,7 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
           className={`grid grid-cols-1 max-w-6xl mx-auto transition-all duration-300 delay-300 transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
         >
           {/* ISO Card & Accordion */}
-          <div className="mt-[64px] scroll-mt-32" id="isoStandards">
+          <div className="mt-[64px] scroll-mt-32" id="normasiso">
             <div
               className={` glass rounded-3xl border border-white bg-white shadow-xl transition-all duration-300 overflow-hidden ${expandedSection === "iso" ? "ring-2 ring-blue-600/20" : ""}`}
             >

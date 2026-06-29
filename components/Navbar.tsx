@@ -41,8 +41,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, navigateToSection }) => {
                 e.preventDefault();
 
                 switch (item.href) {
-                  case "#isoStandards":
-                    navigateToSection("isoStandards", "iso");
+                  case "#normasiso":
+                    navigateToSection("normasiso", "iso");
                     break;
 
                   case "#lec":

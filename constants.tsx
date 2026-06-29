@@ -2,7 +2,7 @@ import { Service, NavItem } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Inicio", href: "#home" },
-  { label: "Normas ISO", href: "#isoStandards" },
+  { label: "Normas ISO", href: "#normasiso" },
   { label: "Ley de Conocimiento", href: "#lec" },
   { label: "Nosotros", href: "#about" },
   { label: "Contacto", href: "#contact" },
