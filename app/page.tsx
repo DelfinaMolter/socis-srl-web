@@ -28,8 +28,46 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
 
+      if (hash === "#lec") {
+        setExpandedSection("knowledge");
+        setPendingScroll("lec");
+      } else if (hash === "#normasiso") {
+        setExpandedSection("iso");
+        setPendingScroll("normasiso");
+      }
+    };
+
+    handleHash();
+
+    window.addEventListener("hashchange", handleHash);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHash);
+    };
+  }, []);
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+
+    if (!hash) return;
+
+    if (hash === "lec") {
+      setExpandedSection("knowledge");
+    }
+
+    if (hash === "normasiso") {
+      setExpandedSection("iso");
+    }
+
+    setPendingScroll(hash);
+  }, []);
   const navigateToSection = (id: string, section?: "iso" | "knowledge") => {
+    // actualiza la URL
+    window.history.replaceState(null, "", `#${id}`);
+
     if (section) {
       setExpandedSection(section);
     } else {

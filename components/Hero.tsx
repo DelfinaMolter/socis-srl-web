@@ -40,6 +40,42 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
     });
   };
 
+  /* useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+
+      if (hash === "#lec") {
+        setExpandedSection("knowledge");
+
+        setTimeout(() => {
+          document.getElementById("lec")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      }
+
+      if (hash === "#normasiso") {
+        setExpandedSection("iso");
+
+        setTimeout(() => {
+          document.getElementById("normasiso")?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      }
+    };
+
+    handleHash();
+
+    window.addEventListener("hashchange", handleHash);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHash);
+    };
+  }, []); */
+
   return (
     <div className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       {/* Background Image with Overlay */}
