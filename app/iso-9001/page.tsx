@@ -2,6 +2,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { FaWhatsapp } from "react-icons/fa";
+import GoogleAdsTag from "@/components/GoogleAdsTag";
 
 import {
   Award,
@@ -88,157 +89,162 @@ const sectors = [
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-white text-socisBlueDark">
-      <section className="relative w-full overflow-hidden">
-        <div className="relative md:absolute max-w-40  md:right-6 lg:right-12 md:top-8 rounded-xl bg-socisLogoBlue px-5 py-3 text-xl font-bold text-white opacity-70 mx-6 my-8 md:mx-0 md:my-0">
-          ISO 9001
-        </div>
-        <div id="header" className="  px-6 py-8  lg:px-8 lg:py-12 ">
-          <div className="mb-8 inline-flex flex-col">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-socisLogoBlue rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
-                <img src="/socis-logo.png" alt="Socis" className="w-9 h-9" />
+    <>
+      <GoogleAdsTag />
+      <main className="relative min-h-screen bg-white text-socisBlueDark">
+        <section className="relative w-full overflow-hidden">
+          <div className="relative md:absolute max-w-40  md:right-6 lg:right-12 md:top-8 rounded-xl bg-socisLogoBlue px-5 py-3 text-xl font-bold text-white opacity-70 mx-6 my-8 md:mx-0 md:my-0">
+            ISO 9001
+          </div>
+          <div id="header" className="  px-6 py-8  lg:px-8 lg:py-12 ">
+            <div className="mb-8 inline-flex flex-col">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-socisLogoBlue rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
+                  <img src="/socis-logo.png" alt="Socis" className="w-9 h-9" />
+                </div>
+                <div className="text-5xl font-serif tracking-wide text-socisBlueMedium">
+                  SOCIS
+                </div>
               </div>
-              <div className="text-5xl font-serif tracking-wide text-socisBlueMedium">
-                SOCIS
+              <div className="mt-1 bg-socisBlueMedium px-4 py-1 text-center text-sm font-semibold tracking-[0.45em] text-white">
+                CONSULTORES
               </div>
             </div>
-            <div className="mt-1 bg-socisBlueMedium px-4 py-1 text-center text-sm font-semibold tracking-[0.45em] text-white">
-              CONSULTORES
+
+            <div className="mt-10 px-8">
+              <h1 className=" text-4xl xs:text-5xl font-extrabold leading-tight tracking-tight text-socisBlueDark md:text-6xl">
+                Certificación ISO 9001
+                <span className="block text-socisBlueMedium ">
+                  para servicios e industrias
+                </span>
+              </h1>
+
+              <p className="mt-6  text-xl leading-relaxed">
+                Ayudamos a implementar sistemas de gestión de calidad que
+                mejoran procesos, aumentan la satisfacción de los clientes y
+                generan una ventaja competitiva sostenible.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contactar por WhatsApp"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-socisGreenWhatsApp px-7 py-4 text-lg font-bold text-white shadow-soft transition hover:scale-[1.02]"
+                >
+                  <FaWhatsapp size={24} /> Consultar por WhatsApp
+                </a>
+                <a
+                  href="#contacto"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl border-2 border-socisBlueMedium bg-white px-7 py-4 text-lg font-bold text-socisBlueMedium transition hover:bg-blue-50"
+                >
+                  <FileText className="h-6 w-6" /> Solicitar propuesta
+                </a>
+              </div>
+              <p className="mt-5 flex items-center gap-2 text-sm font-medium">
+                <ShieldCheck className="h-5 w-5 text-socisBlueMedium" /> Sin
+                cargo y sin compromiso
+              </p>
+            </div>
+
+            <div className=" m-auto my-8 rounded-2xl bg-socisBlueMedium p-6 text-white shadow-soft md:w-[70%]">
+              <div className="grid gap-4 md:grid-cols-2">
+                <div>
+                  <div className="mb-2 flex items-center gap-3">
+                    <Users className="h-8 w-8" />
+                    <h3 className="text-lg font-bold">
+                      Para empresas de servicios
+                    </h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-blue-50">
+                    Consultoras, estudios, agencias, empresas de tecnología,
+                    salud, educación, logística, turismo y más.
+                  </p>
+                </div>
+                <div className="border-t border-white/30 pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+                  <div className="mb-2 flex items-center gap-3">
+                    <Factory className="h-8 w-8" />
+                    <h3 className="text-lg font-bold">Para industrias</h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-blue-50">
+                    Alimenticias, metalúrgicas, automotrices, químicas,
+                    plásticas, textiles y más.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
+        </section>
 
-          <div className="mt-10 px-8">
-            <h1 className=" text-4xl xs:text-5xl font-extrabold leading-tight tracking-tight text-socisBlueDark md:text-6xl">
-              Certificación ISO 9001
-              <span className="block text-socisBlueMedium ">
-                para servicios e industrias
-              </span>
-            </h1>
-
-            <p className="mt-6  text-xl leading-relaxed">
-              Ayudamos a implementar sistemas de gestión de calidad que mejoran
-              procesos, aumentan la satisfacción de los clientes y generan una
-              ventaja competitiva sostenible.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contactar por WhatsApp"
-                className="inline-flex items-center justify-center gap-3 rounded-xl bg-socisGreenWhatsApp px-7 py-4 text-lg font-bold text-white shadow-soft transition hover:scale-[1.02]"
-              >
-                <FaWhatsapp size={24} /> Consultar por WhatsApp
-              </a>
-              <a
-                href="#contacto"
-                className="inline-flex items-center justify-center gap-3 rounded-xl border-2 border-socisBlueMedium bg-white px-7 py-4 text-lg font-bold text-socisBlueMedium transition hover:bg-blue-50"
-              >
-                <FileText className="h-6 w-6" /> Solicitar propuesta
-              </a>
-            </div>
-            <p className="mt-5 flex items-center gap-2 text-sm font-medium">
-              <ShieldCheck className="h-5 w-5 text-socisBlueMedium" /> Sin cargo
-              y sin compromiso
-            </p>
+        <Section title="Etapas de implementación">
+          <div className="mt-10 grid gap-8 md:grid-cols-5 container">
+            {steps.map(([title, text, Icon], index) => {
+              const StepIcon = Icon as typeof Search;
+              return (
+                <div key={title as string} className="text-center">
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-50 text-socisBlueMedium">
+                    <StepIcon className="h-10 w-10" />
+                  </div>
+                  <div className="-mt-24 ml-auto mr-auto flex h-8 w-8 items-center justify-center rounded-full bg-socisBlueMedium text-sm font-bold text-white">
+                    {index + 1}
+                  </div>
+                  <div className="mt-20">
+                    <h3 className="text-lg font-extrabold text-socisBlueMedium">
+                      {title as string}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed">
+                      {text as string}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
+        </Section>
 
-          <div className=" m-auto my-8 rounded-2xl bg-socisBlueMedium p-6 text-white shadow-soft md:w-[70%]">
-            <div className="grid gap-4 md:grid-cols-2">
-              <div>
-                <div className="mb-2 flex items-center gap-3">
-                  <Users className="h-8 w-8" />
-                  <h3 className="text-lg font-bold">
-                    Para empresas de servicios
-                  </h3>
-                </div>
-                <p className="text-sm leading-relaxed text-blue-50">
-                  Consultoras, estudios, agencias, empresas de tecnología,
-                  salud, educación, logística, turismo y más.
-                </p>
-              </div>
-              <div className="border-t border-white/30 pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-                <div className="mb-2 flex items-center gap-3">
-                  <Factory className="h-8 w-8" />
-                  <h3 className="text-lg font-bold">Para industrias</h3>
-                </div>
-                <p className="text-sm leading-relaxed text-blue-50">
-                  Alimenticias, metalúrgicas, automotrices, químicas, plásticas,
-                  textiles y más.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Section title="Etapas de implementación">
-        <div className="mt-10 grid gap-8 md:grid-cols-5 container">
-          {steps.map(([title, text, Icon], index) => {
-            const StepIcon = Icon as typeof Search;
-            return (
-              <div key={title as string} className="text-center">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-50 text-socisBlueMedium">
-                  <StepIcon className="h-10 w-10" />
-                </div>
-                <div className="-mt-24 ml-auto mr-auto flex h-8 w-8 items-center justify-center rounded-full bg-socisBlueMedium text-sm font-bold text-white">
-                  {index + 1}
-                </div>
-                <div className="mt-20">
-                  <h3 className="text-lg font-extrabold text-socisBlueMedium">
+        <Section title="Beneficios para su empresa">
+          <div className="mt-10 grid gap-8 md:grid-cols-4 container">
+            {benefits.map(([title, text, Icon]) => {
+              const BenefitIcon = Icon as typeof Award;
+              return (
+                <div key={title as string} className="text-center">
+                  <BenefitIcon className="mx-auto h-12 w-12 text-socisBlueMedium" />
+                  <h3 className="mt-4 text-lg font-extrabold text-socisBlueMedium">
                     {title as string}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed">
                     {text as string}
                   </p>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </Section>
+              );
+            })}
+          </div>
+        </Section>
 
-      <Section title="Beneficios para su empresa">
-        <div className="mt-10 grid gap-8 md:grid-cols-4 container">
-          {benefits.map(([title, text, Icon]) => {
-            const BenefitIcon = Icon as typeof Award;
-            return (
-              <div key={title as string} className="text-center">
-                <BenefitIcon className="mx-auto h-12 w-12 text-socisBlueMedium" />
-                <h3 className="mt-4 text-lg font-extrabold text-socisBlueMedium">
-                  {title as string}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed">{text as string}</p>
-              </div>
-            );
-          })}
-        </div>
-      </Section>
+        <Section title="Implementación pensada para todo tipo de organizaciones">
+          <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-8 container">
+            {sectors.map(([sector, Icon]) => {
+              const SectorIcon = Icon as typeof Code2;
+              return (
+                <div key={sector as string} className="text-center">
+                  <SectorIcon className="mx-auto h-11 w-11 text-socisBlueMedium" />
+                  <p className="mt-3 text-sm font-extrabold text-socisBlueMedium">
+                    {sector as string}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </Section>
 
-      <Section title="Implementación pensada para todo tipo de organizaciones">
-        <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-8 container">
-          {sectors.map(([sector, Icon]) => {
-            const SectorIcon = Icon as typeof Code2;
-            return (
-              <div key={sector as string} className="text-center">
-                <SectorIcon className="mx-auto h-11 w-11 text-socisBlueMedium" />
-                <p className="mt-3 text-sm font-extrabold text-socisBlueMedium">
-                  {sector as string}
-                </p>
-              </div>
-            );
-          })}
+        <div className="mt-40 mb-40" id="contacto">
+          <Contact siteUrl="iso9001" />
         </div>
-      </Section>
-
-      <div className="mt-40 mb-40" id="contacto">
-        <Contact siteUrl="iso9001" />
-      </div>
-      <Footer nav={false} />
-      <WhatsAppFloat />
-    </main>
+        <Footer nav={false} />
+        <WhatsAppFloat />
+      </main>
+    </>
   );
 }
 
