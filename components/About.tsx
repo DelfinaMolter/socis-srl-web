@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { TEAM } from "../constants";
+import { trackEvent } from "@/app/lib/analytics";
 
 const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -67,6 +68,12 @@ const About: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+              onClick={() => {
+                trackEvent("click_phone", {
+                  event_category: "engagement",
+                  event_label: `Click LinkedIn - ${member.name}`,
+                });
+              }}
             >
               <FaLinkedin size={24} />
             </a>

@@ -3,6 +3,7 @@
 import React from "react";
 import { Mail, Phone, ArrowUp } from "lucide-react";
 import { NAV_ITEMS } from "../constants";
+import { trackEvent } from "@/app/lib/analytics";
 
 interface FooterProp {
   nav?: boolean;
@@ -57,6 +58,12 @@ const Footer: React.FC<FooterProp> = ({ nav }) => {
               target="_blank"
               rel="noreferrer"
               className="w-10 h-10 bg-white/5 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all group"
+              onClick={() => {
+                trackEvent("click_phone", {
+                  event_category: "engagement",
+                  event_label: `Click LinkedIn - Footer`,
+                });
+              }}
             >
               <svg
                 className="w-5 h-5 group-hover:scale-110 transition-transform"

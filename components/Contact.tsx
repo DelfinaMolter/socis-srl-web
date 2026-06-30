@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Mail, Phone, Send, CheckCircle2 } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { trackEvent } from "@/app/lib/analytics";
 
 interface ContactProps {
   siteUrl: string;
@@ -60,6 +61,10 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
     });
 
     if (response.ok) {
+      trackEvent("generate_lead", {
+        event_category: "form",
+        event_label: `Send Form - ${siteUrl}`,
+      });
       setFormStatus("success");
       form.reset();
       recaptchaRef.current?.reset();
@@ -98,6 +103,12 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
             <a
               href="mailto:info@socis.com.ar"
               className="flex items-start gap-6 group"
+              onClick={() => {
+                trackEvent("click_email", {
+                  event_category: "engagement",
+                  event_label: `Click Email - ${siteUrl}`,
+                });
+              }}
             >
               <div className="p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-600 transition-colors">
                 <Mail className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />
@@ -110,6 +121,12 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
             <a
               href="tel:+5491144478802"
               className="flex items-start gap-6 group"
+              onClick={() => {
+                trackEvent("click_phone", {
+                  event_category: "engagement",
+                  event_label: `Click Phone - ${siteUrl}`,
+                });
+              }}
             >
               <div className="p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-600 transition-colors">
                 <Phone className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />

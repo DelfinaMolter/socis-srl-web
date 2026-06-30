@@ -20,6 +20,7 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
+import { trackEvent } from "../lib/analytics";
 
 const whatsappUrl =
   "https://wa.me/5491144478802?text=Hola%20SOCIS%2C%20quiero%20consultar%20por%20ISO%2045001";
@@ -130,6 +131,12 @@ export default function Home() {
                   rel="noopener noreferrer"
                   aria-label="Contactar por WhatsApp"
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-socisGreenWhatsApp px-7 py-4 text-lg font-bold text-white shadow-soft transition hover:scale-[1.02]"
+                  onClick={() => {
+                    trackEvent("click_whatsapp", {
+                      event_category: "engagement",
+                      event_label: "WhatsApp - ISO 45001 Landing",
+                    });
+                  }}
                 >
                   <FaWhatsapp size={24} /> Consultar por WhatsApp
                 </a>

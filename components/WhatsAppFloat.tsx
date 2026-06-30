@@ -1,3 +1,4 @@
+import { trackEvent } from "@/app/lib/analytics";
 import React from "react";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -19,6 +20,12 @@ const WhatsAppFloat: React.FC = () => {
       rel="noopener noreferrer"
       className="fixed bottom-8 right-8 z-[100] group flex items-center justify-center w-16 h-16 bg-socisGreenWhatsApp text-white rounded-full shadow-2xl hover:bg-socisGreenWhatsAppDark transition-all hover:scale-110 active:scale-95 animate-in slide-in-from-bottom-10 duration-500"
       aria-label="Contactar por WhatsApp"
+      onClick={() => {
+        trackEvent("click_whatsapp", {
+          event_category: "engagement",
+          event_label: "Floating WhatsApp Button",
+        });
+      }}
     >
       <div className="absolute inset-0 rounded-full bg-socisGreenWhatsApp animate-ping opacity-20"></div>
       <WhatsAppIcon className="w-8 h-8 relative z-10" />
