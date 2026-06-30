@@ -1,3 +1,5 @@
+"use client";
+
 import { trackEvent } from "@/app/lib/analytics";
 import { AnchorHTMLAttributes } from "react";
 
