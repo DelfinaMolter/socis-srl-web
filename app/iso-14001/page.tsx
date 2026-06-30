@@ -1,3 +1,5 @@
+"use client";
+
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -21,7 +23,6 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import { trackEvent } from "../lib/analytics";
 import TrackLink from "@/components/TrackLink";
 
 const whatsappUrl =
