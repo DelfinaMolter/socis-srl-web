@@ -13,6 +13,9 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
   );
   const [isVisible, setIsVisible] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [recaptchaSize, setRecaptchaSize] = useState<"normal" | "compact">(
+    "normal",
+  );
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA | null>(null);
   const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
@@ -25,7 +28,17 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
 
-    return () => observer.disconnect();
+    const updateRecaptchaSize = () => {
+      setRecaptchaSize(window.innerWidth < 410 ? "compact" : "normal");
+    };
+
+    updateRecaptchaSize();
+    window.addEventListener("resize", updateRecaptchaSize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateRecaptchaSize);
+    };
   }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -77,29 +90,32 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
   };
 
   return (
-    <div ref={sectionRef} className="container mx-auto ">
-      <div className="grid lg:grid-cols-2 gap-8 lg:gap-20">
+    <div
+      ref={sectionRef}
+      className="container mx-auto px-6 lg:px-8 max-w-full overflow-x-hidden"
+    >
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-start overflow-hidden">
         <div
           className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
         >
-          <h2 className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4 px-6">
+          <h2 className="text-blue-600 font-bold tracking-widest uppercase text-sm mb-4 px-0 sm:px-6">
             Contacto
           </h2>
-          <h3 className="text-4xl font-extrabold text-slate-900 mb-8 leading-tight px-6">
+          <h3 className="text-4xl font-extrabold text-slate-900 mb-8 leading-tight px-0 sm:px-6">
             Conversemos sobre tu proyecto
           </h3>
-          <p className="text-slate-600 text-lg mb-12 px-6">
+          <p className="text-slate-600 text-lg mb-12 px-0 sm:px-6">
             Si estás evaluando implementar un sistema de gestión basado en
             normas ISO o aplicar a la Ley de Economía del Conocimiento, podemos
             analizar tu situación y definir el camino más adecuado para tu
             organización.
           </p>
-          <p className="text-slate-600 text-lg mb-12 px-6">
+          <p className="text-slate-600 text-lg mb-12 px-0 sm:px-6">
             Para poder analizar adecuadamente tu consulta y brindarte una
             orientación inicial, te pedimos completar el formulario.
           </p>
 
-          <div className="space-y-8 px-6">
+          <div className="space-y-8 px-0 sm:px-6">
             <a
               href="mailto:info@socis.com.ar"
               className="flex items-start gap-6 group"
@@ -140,7 +156,7 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
         </div>
 
         <div
-          className={`bg-white px-6 p-8 md:p-12 rounded-[2.5rem] border border-slate-200 shadow-2xl transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
+          className={`bg-white px-6 p-8 md:p-12 rounded-[2.5rem] border border-slate-200 transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
         >
           {formStatus === "success" ? (
             <div className="h-full flex flex-col items-center justify-center text-center py-20 animate-in fade-in zoom-in duration-500">
@@ -278,6 +294,7 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
                   sitekey={siteKey}
                   onChange={(token) => setRecaptchaToken(token)}
                   onExpired={() => setRecaptchaToken(null)}
+                  size={recaptchaSize}
                 />
               ) : (
                 <p className="text-sm text-amber-600 font-medium">

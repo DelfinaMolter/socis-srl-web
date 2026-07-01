@@ -4,11 +4,18 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: #fff;
   color: #061a45;
+  overflow-x: hidden;
 }
 input,
 textarea,
