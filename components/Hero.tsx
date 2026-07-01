@@ -382,7 +382,7 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
                               El régimen establece distintos criterios de
                               acceso, que pueden incluir exportaciones,
                               inversión en investigación y desarrollo,
-                              capacitación del personal o implem entación de
+                              capacitación del personal o implementación de
                               sistemas formales de gestión.
                             </p>
                             <p className="text-sm text-slate-600 ">
