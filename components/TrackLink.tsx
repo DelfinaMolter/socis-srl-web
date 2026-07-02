@@ -1,5 +1,6 @@
 "use client";
 
+import { trackEvent } from "@/app/lib/analytics";
 import { AnchorHTMLAttributes } from "react";
 
 type TrackLinkProps = Omit<
@@ -8,11 +9,6 @@ type TrackLinkProps = Omit<
 > & {
   eventName: string;
   eventParams?: Record<string, unknown>;
-};
-
-const trackEvent = (name: string, params?: Record<string, unknown>) => {
-  if (typeof window === "undefined") return;
-  window.gtag?.("event", name, params);
 };
 
 export default function TrackLink({

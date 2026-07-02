@@ -22,7 +22,8 @@ const WhatsAppFloat: React.FC = () => {
       aria-label="Contactar por WhatsApp"
       onClick={() => {
         trackEvent("click_whatsapp", {
-          location: "floating_button",
+          location: "all_pages",
+          button: "floating",
         });
       }}
     >
