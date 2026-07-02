@@ -97,7 +97,7 @@ export default function Home() {
       <Navbar scrolled={scrolled} navigateToSection={navigateToSection} />
 
       <main className="overflow-x-hidden">
-        <section id="home">
+        <section id="inicio">
           <Hero
             expandedSection={expandedSection}
             setExpandedSection={setExpandedSection}
@@ -105,7 +105,7 @@ export default function Home() {
         </section>
 
         <section
-          id="about"
+          id="nosotros"
           className="py-24 md:py-36 bg-slate-50 overflow-hidden"
         >
           <About />
@@ -125,7 +125,7 @@ export default function Home() {
           id="contactos"
           className="py-24 md:py-36 bg-white overflow-hidden"
         >
-          <Contact siteUrl="home" />
+          <Contact siteUrl="inicio" />
         </section>
       </main>
 

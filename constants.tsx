@@ -1,10 +1,10 @@
 import { Service, NavItem } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Inicio", href: "#home" },
+  { label: "Inicio", href: "#inicio" },
   { label: "Normas ISO", href: "#normasiso" },
   { label: "Ley de Conocimiento", href: "#lec" },
-  { label: "Nosotros", href: "#about" },
+  { label: "Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contactos" },
 ];
 
