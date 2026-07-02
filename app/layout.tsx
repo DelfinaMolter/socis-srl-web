@@ -51,9 +51,11 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+      </body>
     </html>
   );
 }
