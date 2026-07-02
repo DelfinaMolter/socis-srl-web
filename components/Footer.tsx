@@ -59,9 +59,8 @@ const Footer: React.FC<FooterProp> = ({ nav }) => {
               rel="noreferrer"
               className="w-10 h-10 bg-white/5 hover:bg-blue-600 rounded-full flex items-center justify-center transition-all group"
               onClick={() => {
-                trackEvent("click_phone", {
-                  event_category: "engagement",
-                  event_label: `Click LinkedIn - Footer`,
+                trackEvent("click_linkedin", {
+                  location: "footer",
                 });
               }}
             >

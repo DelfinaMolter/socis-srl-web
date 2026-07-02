@@ -137,8 +137,8 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-socisGreenWhatsApp px-7 py-4 text-lg font-bold text-white shadow-soft transition hover:scale-[1.02]"
                   eventName="click_whatsapp"
                   eventParams={{
-                    event_category: "engagement",
-                    event_label: "WhatsApp - ISO 14001 Landing",
+                    location: "iso14001",
+                    button: "landing",
                   }}
                 >
                   <FaWhatsapp size={24} /> Consultar por WhatsApp

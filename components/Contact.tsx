@@ -75,8 +75,8 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
 
     if (response.ok) {
       trackEvent("generate_lead", {
-        event_category: "form",
-        event_label: `Send Form - ${siteUrl}`,
+        source: siteUrl,
+        method: "contact_form",
       });
       setFormStatus("success");
       form.reset();
@@ -139,8 +139,7 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
               className="flex items-start gap-6 group"
               onClick={() => {
                 trackEvent("click_phone", {
-                  event_category: "engagement",
-                  event_label: `Click Phone - ${siteUrl}`,
+                  source: siteUrl,
                 });
               }}
             >
