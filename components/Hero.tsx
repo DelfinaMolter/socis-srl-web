@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 import { ISO_STANDARDS } from "../constants";
+import { trackEvent } from "@/app/lib/analytics";
 
 interface HeroProps {
   expandedSection: "none" | "iso" | "knowledge";
@@ -26,6 +27,10 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
   const toggleSection = (section: "iso" | "knowledge") => {
     setExpandedSection((prev) => {
       const nextSection = prev === section ? "none" : section;
+
+      if (nextSection !== "none") {
+        trackEvent("click_accordion", { section: nextSection });
+      }
 
       if (nextSection === "knowledge" && prev !== "knowledge") {
         window.setTimeout(() => {
@@ -108,6 +113,12 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#contactos"
+              onClick={() =>
+                trackEvent("click_cta_diagnostico", {
+                  location: "home",
+                  button: "hero",
+                })
+              }
               className="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-2xl transition-all shadow-xl shadow-blue-500/25 flex items-center justify-center gap-2 hover:scale-105 active:scale-95 text-lg"
             >
               Solicitar diagnóstico inicial

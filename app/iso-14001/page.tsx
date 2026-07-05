@@ -143,12 +143,17 @@ export default function Home() {
                 >
                   <FaWhatsapp size={24} /> Consultar por WhatsApp
                 </TrackLink>
-                <a
+                <TrackLink
                   href="#contacto"
                   className="inline-flex items-center justify-center gap-3 rounded-xl border-2 border-socisGreen bg-white px-7 py-4 text-lg font-bold text-socisGreen transition hover:bg-blue-50"
+                  eventName="click_cta_proposal"
+                  eventParams={{
+                    location: "iso14001",
+                    button: "landing",
+                  }}
                 >
                   <FileText className="h-6 w-6" /> Solicitar propuesta
-                </a>
+                </TrackLink>
               </div>
               <p className="mt-5 flex items-center gap-2 text-sm font-medium">
                 <ShieldCheck className="h-5 w-5 text-socisGreen" /> Sin cargo y
