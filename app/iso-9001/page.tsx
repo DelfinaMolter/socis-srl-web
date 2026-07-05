@@ -137,7 +137,7 @@ export default function Home() {
                   className="inline-flex items-center justify-center gap-3 rounded-xl bg-socisGreenWhatsApp px-7 py-4 text-lg font-bold text-white shadow-soft transition hover:scale-[1.02]"
                   eventName="click_whatsapp"
                   eventParams={{
-                    elocation: "iso9001",
+                    location: "iso9001",
                     button: "landing",
                   }}
                 >
