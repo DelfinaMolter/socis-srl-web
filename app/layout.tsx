@@ -7,22 +7,31 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "SOCIS",
-  url: "https://socis.com.ar",
+  url: "https://www.socis.com.ar",
   logo: "https://www.socis.com.ar/socis-logo.png",
   email: "info@socis.com.ar",
   telephone: "+54 911 44478802",
   sameAs: ["https://www.linkedin.com/company/socis-srl/"],
 };
 export const metadata: Metadata = {
-  title: "SOCIS Consultores",
-  description: "Consultores de normas ISO para servicios e industrias.",
+  metadataBase: new URL("https://www.socis.com.ar"),
+  title: {
+    default: "SOCIS Consultores | Normas ISO para servicios e industrias",
+    template: "%s | SOCIS Consultores",
+  },
+  description:
+    "Consultores en normas ISO (9001, 14001, 27001 y 45001) para empresas de servicios e industrias en Argentina. Diagnóstico sin cargo.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/socis-logo.png",
   },
   openGraph: {
     title: "SOCIS | Consultores de normas ISO para servicios e industrias",
-    description: "Consultoría en ISO 27001, SOC 2 y compliance para empresas.",
-    url: "https://socis.com.ar",
+    description:
+      "Consultoría en ISO 9001, 14001, 27001 y 45001 para empresas de servicios e industrias.",
+    url: "https://www.socis.com.ar",
     siteName: "SOCIS",
     locale: "es_AR",
     type: "website",
