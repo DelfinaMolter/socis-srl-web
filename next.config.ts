@@ -10,6 +10,26 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/certificacion-iso-9001",
+        destination: "/iso-9001",
+        permanent: true,
+      },
+      {
+        source: "/certificacion-normas-iso",
+        destination: "/#normasiso",
+        permanent: true,
+      },
+      {
+        source: "/plan-de-facilidades-para-pymes-2018",
+        destination: "/#normasiso",
+        permanent: true,
+      },
+      {
+        source: "/ley-de-conocimiento",
+        destination: "/#lec",
+        permanent: true,
+      },
+      {
         source: "/subsidio-para-certificar-iso-9001-o-14001",
         destination: "/iso-14001",
         permanent: true,
