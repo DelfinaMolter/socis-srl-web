@@ -20,6 +20,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/nosotros",
+        destination: "/#nosotros",
+        permanent: true,
+      },
+      {
+        source: "/contacto",
+        destination: "/#contactos",
+        permanent: true,
+      },
+      {
         source: "/plan-de-facilidades-para-pymes-2018",
         destination: "/#normasiso",
         permanent: true,
