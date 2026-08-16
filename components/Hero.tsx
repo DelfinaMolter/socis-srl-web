@@ -379,8 +379,8 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
                               ))}
                             </div>
                             <p className="text-sm text-slate-600 ">
-                              Estos beneficios impactan directamente en la e
-                              structura financiera y competitividad de la
+                              Estos beneficios impactan directamente en la
+                              estructura financiera y competitividad de la
                               empresa.
                             </p>
                           </div>
@@ -429,7 +429,7 @@ const Hero: React.FC<HeroProps> = ({ expandedSection, setExpandedSection }) => {
                             <p className="text-sm text-slate-600 ">
                               Acceder a la LEC no es solo presentar
                               documentación. Es estructurar la organización para
-                              sostener el beneficio en e l tiempo
+                              sostener el beneficio en el tiempo
                             </p>
                           </div>
                         </div>

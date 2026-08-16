@@ -102,17 +102,16 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
             Contacto
           </h2>
           <h3 className="text-4xl font-extrabold text-slate-900 mb-8 leading-tight px-0 sm:px-6">
-            Conversemos sobre tu proyecto
+            Conversemos sobre su proyecto
           </h3>
           <p className="text-slate-600 text-lg mb-12 px-0 sm:px-6">
-            Si estás evaluando implementar un sistema de gestión basado en
-            normas ISO o aplicar a la Ley de Economía del Conocimiento, podemos
-            analizar tu situación y definir el camino más adecuado para tu
-            organización.
+            Si está evaluando implementar una Norma ISO o acceder a los
+            beneficios de la Ley de Economía del Conocimiento, podemos analizar
+            su situación y definir el camino más adecuado para su organización.
           </p>
           <p className="text-slate-600 text-lg mb-12 px-0 sm:px-6">
-            Para poder analizar adecuadamente tu consulta y brindarte una
-            orientación inicial, te pedimos completar el formulario.
+            Para poder analizar adecuadamente su consulta y brindarle una
+            orientación inicial, le pedimos completar el formulario.
           </p>
 
           <div className="space-y-8 px-0 sm:px-6">
