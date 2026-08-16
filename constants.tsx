@@ -1,10 +1,11 @@
-import { Service, NavItem } from "./types";
+import { Service, NavItem, FAQItem } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Inicio", href: "#inicio" },
   { label: "Normas ISO", href: "#normasiso" },
   { label: "Ley de Conocimiento", href: "#lec" },
   { label: "Nosotros", href: "#nosotros" },
+  { label: "Preguntas Frecuentes", href: "#faq" },
   { label: "Contacto", href: "#contactos" },
 ];
 
@@ -152,4 +153,91 @@ export const TECH_STACK = [
   "Ley 25.922",
   "Mejora de Procesos",
   "Auditoría Interna",
+];
+
+export const FAQ_ITEMS: FAQItem[] = [
+  {
+    id: 1,
+    question:
+      "¿Cuánto tiempo demora la certificación y qué empresas pueden acceder a ella?",
+    answer:
+      "La implementación suele completarse en 4 a 6 meses, con un cronograma que se adapta a la estructura y complejidad de cada organización para no interrumpir la operación diaria ni la entrega de proyectos en curso. Pueden certificarse empresas públicas y privadas, industriales o de servicios, de cualquier tamaño: desde un profesional independiente hasta una compañía con cientos de colaboradores.",
+    tag: "Plazos y Alcance",
+  },
+  {
+    id: 2,
+    question: "¿Cuáles son las normas ISO más solicitadas por las empresas?",
+    answer: "Las cuatro normas con mayor demanda en el mercado son:",
+    isoStandards: [
+      {
+        code: "ISO 9001",
+        title: "Gestión de la Calidad",
+        description:
+          "El estándar de gestión más implementado a nivel mundial. Aplica a cualquier tipo de organización para ordenar, estandarizar y asegurar la consistencia de sus procesos.",
+        badgeColor: "blue",
+      },
+      {
+        code: "ISO 27001",
+        title: "Seguridad de la Información",
+        description:
+          "Protege los datos propios, de clientes y de terceros mediante controles de acceso, continuidad y gestión de riesgos, cada vez más exigida como requisito comercial y contractual.",
+        badgeColor: "indigo",
+      },
+      {
+        code: "ISO 14001",
+        title: "Gestión Ambiental",
+        description:
+          "Optimiza el uso de recursos y reduce el impacto ambiental en empresas industriales y de servicios.",
+        badgeColor: "emerald",
+      },
+      {
+        code: "ISO 45001",
+        title: "Seguridad y Salud en el Trabajo",
+        description:
+          "Previene riesgos laborales, cuida la salud de los colaboradores y garantiza entornos de trabajo seguros.",
+        badgeColor: "orange",
+      },
+    ],
+    note: "Muchas organizaciones combinan dos o más normas en un Sistema Integrado de Gestión, lo que reduce tiempos y costos de implementación frente a certificarlas por separado.",
+    tag: "Normas Principales",
+  },
+  {
+    id: 3,
+    question:
+      "Después de certificar, ¿hace falta una persona dedicada solo a mantener la norma?",
+    answer:
+      "No. Certificar no significa sumar estructura. El mantenimiento consiste en la ejecución rutinaria de procesos que ya quedaron ordenados durante la implementación. El objetivo del proyecto es justamente que el sistema se integre a la cultura y a las herramientas que la empresa ya utiliza, sin sobrecargar a ningún rol existente.",
+    tag: "Estructura y Roles",
+  },
+  {
+    id: 4,
+    question:
+      "¿Qué se certifica exactamente: el producto o servicio, o la empresa?",
+    answer:
+      "Un error frecuente es pensar que se certifica el producto o el servicio final. Lo que un ente independiente audita y certifica son los procesos organizacionales que le dan origen: la gestión de Ventas, Compras, Reclutamiento, Mantenimiento, Depósito, Fabricación o la propia Prestación del Servicio, asegurando que se ejecuten con un estándar de consistencia y mejora continua.",
+    tag: "Alcance del Sistema",
+  },
+  {
+    id: 5,
+    question:
+      "¿Certificar una norma ISO implica más burocracia o carga de trabajo diaria?",
+    answer:
+      'No. El enfoque actual de las normas ISO busca simplificar, no complicar. Un sistema bien diseñado elimina la documentación redundante y formaliza únicamente los registros necesarios para garantizar repetibilidad y control. El mito del "papeleo interminable" corresponde a implementaciones mal hechas, no a la norma en sí.',
+    tag: "Eficiencia y Procesos",
+  },
+  {
+    id: 6,
+    question: "¿Se puede implementar y auditar en modalidad remota o híbrida?",
+    answer:
+      "Sí, y hoy es la modalidad más elegida. Las normativas vigentes y los entes certificadores avalan por completo la gestión virtual. Con metodologías ágiles y entornos colaborativos digitales gestionamos relevamientos, capacitaciones y auditorías internas a distancia, reduciendo costos de traslado y facilitando el trabajo con equipos distribuidos.",
+    tag: "Modalidad Remota",
+  },
+  {
+    id: 7,
+    question:
+      "¿Cuánto dura la certificación y qué se necesita para mantenerla vigente?",
+    answer:
+      "El certificado tiene una validez de 3 años. Para conservarla, el ente certificador realiza auditorías de seguimiento anuales (al cierre del año 1 y del año 2) que verifican que los procesos sigan ejecutándose correctamente. El ciclo se cierra con una auditoría de recertificación al tercer año.",
+    tag: "Vigencia y Auditorías",
+  },
 ];

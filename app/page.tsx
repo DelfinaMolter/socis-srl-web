@@ -10,6 +10,7 @@ import Experience from "@/components/Experience";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function Home() {
@@ -120,7 +121,12 @@ export default function Home() {
         <section>
           <Experience />
         </section>
-
+        <section
+          id="faq"
+          className="py-24 md:py-36 bg-slate-50 border-t border-slate-100"
+        >
+          <FAQ />
+        </section>
         <section
           id="contactos"
           className="py-24 md:py-36 bg-white overflow-hidden"

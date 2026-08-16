@@ -1,4 +1,3 @@
-
 export interface Service {
   id: string;
   title: string;
@@ -16,4 +15,18 @@ export interface Testimonial {
   role: string;
   content: string;
   avatar: string;
+}
+
+export interface FAQItem {
+  id: number;
+  question: string;
+  answer: string;
+  isoStandards?: {
+    code: string;
+    title: string;
+    description: string;
+    badgeColor: string;
+  }[];
+  note?: string;
+  tag?: string;
 }
