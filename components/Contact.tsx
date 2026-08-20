@@ -1,13 +1,15 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { Mail, Phone, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, Send, CheckCircle2, Home } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { trackEvent } from "@/app/lib/analytics";
+import TrackLink from "@/components/TrackLink";
 
 interface ContactProps {
   siteUrl: string;
+  isLanding?: boolean;
 }
-const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
+const Contact: React.FC<ContactProps> = ({ siteUrl, isLanding = false }) => {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success">(
     "idle",
   );
@@ -150,6 +152,23 @@ const Contact: React.FC<ContactProps> = ({ siteUrl }) => {
                 <p className="text-slate-600 font-medium">(54 911) 4447-8802</p>
               </div>
             </a>
+            {isLanding && (
+              <TrackLink
+                href="/"
+                className="flex items-center gap-6 group"
+                eventName="click_home_from_landing_contact"
+                eventParams={{ source: siteUrl }}
+              >
+                <div className="p-4 bg-blue-50 rounded-2xl group-hover:bg-blue-600 transition-colors">
+                  <Home className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-slate-900">
+                    Conoce mas sobre Socis Consultores
+                  </h4>
+                </div>
+              </TrackLink>
+            )}
           </div>
         </div>
 

@@ -96,7 +96,13 @@ export default function Home() {
             ISO 45001
           </div>
           <div id="header" className="  px-6 py-8  lg:px-8 lg:py-12 ">
-            <div className="mb-8 inline-flex flex-col">
+            <TrackLink
+              href="/"
+              aria-label="Ir al inicio de Socis Consultores"
+              className="mb-8 inline-flex flex-col"
+              eventName="click_logo_home"
+              eventParams={{ location: "iso45001" }}
+            >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-socisLogoBlue rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
                   <img src="/socis-logo.png" alt="Socis" className="w-9 h-9" />
@@ -108,7 +114,7 @@ export default function Home() {
               <div className="mt-1 bg-socisBlueMedium px-4 py-1 text-center text-sm font-semibold tracking-[0.45em] text-white">
                 CONSULTORES
               </div>
-            </div>
+            </TrackLink>
 
             <div className="mt-10 px-8">
               <h1 className=" text-4xl xs:text-5xl font-extrabold leading-tight tracking-tight text-socisBlueDark md:text-6xl">
@@ -251,7 +257,7 @@ export default function Home() {
         </Section>
 
         <div className="mt-40 mb-40" id="contacto">
-          <Contact siteUrl="iso45001" />
+          <Contact siteUrl="iso45001" isLanding />
         </div>
         <Footer nav={false} />
         <WhatsAppFloat />
